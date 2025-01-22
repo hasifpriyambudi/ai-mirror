@@ -154,7 +154,7 @@ const onSelect = async (chatgptId: number) => {
     MessagePlugin.error(JSON.stringify(Object.values(data)[0]));
   } else {
     Cookies.set('user-gateway-token', data['user-gateway-token'], { expires: 7 });
-    MessagePlugin.success('登录成功');
+    MessagePlugin.success('Success login');
     window.location.href = '/'; // 跳转到首页
   }
 };

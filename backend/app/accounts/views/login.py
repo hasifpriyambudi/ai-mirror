@@ -20,7 +20,7 @@ class UserFreeLoginView(APIView):
     def post(self, request):
         user = User.objects.filter(username=FREE_ACCOUNT_USERNAME, is_active=True).first()
         if not user:
-            raise ValidationError({"message": "当前系统无免费账号可用"})
+            raise ValidationError({"message": "Wrong email/password"})
         request.user = user
 
         token, created = Token.objects.get_or_create(user=user)

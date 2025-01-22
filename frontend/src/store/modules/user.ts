@@ -36,7 +36,7 @@ export const useUserStore = defineStore('user', {
         this.token = data.admin_token;
         this.is_admin = data.is_admin;
         Cookies.set('user_token', data.admin_token, { expires: 7 });
-        MessagePlugin.success('登录成功');
+        MessagePlugin.success('success login');
       } else if (response.status === 400) {
         data = await response.json();
         MessagePlugin.error(JSON.stringify(Object.values(data)[0]));
