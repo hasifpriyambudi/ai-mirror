@@ -40,7 +40,7 @@
 
             <t-form-item>
               <t-button theme="success" type="submit" size="large" class="login-button">
-                <span v-else> Sign In</span>
+                Sign In
               </t-button>
             </t-form-item>
           </t-form>
