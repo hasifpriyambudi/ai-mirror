@@ -26,7 +26,7 @@ export default [
         component: () => import('@/pages/account/user.vue'),
         meta: {
           title: {
-            zh_CN: '用户',
+            zh_CN: 'User',
             en_US: 'User',
           },
         },

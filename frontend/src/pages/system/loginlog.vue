@@ -46,13 +46,13 @@ const pagination = {
 const tableLoading = ref(false);
 const tableData = ref<TableData[]>([]);
 const columns: TableProps['columns'] = [
-  { colKey: 'username', title: '用户名', width: 200 },
+  { colKey: 'username', title: 'ID User', width: 200 },
   { colKey: 'chatgpt_username', title: 'ChatGPT', width: 200 },
   { colKey: 'ip', title: 'IP', width: 200 },
   // { colKey: 'country', title: '国家/地区', width: 100 },
-  { colKey: 'log_type', title: '操作类型', width: 200 },
-  { colKey: 'created_at', title: '操作时间', width: 200 },
-  { colKey: 'user_agent', title: '操作设备', width: 250 },
+  { colKey: 'log_type', title: 'Operation TYpe', width: 200 },
+  { colKey: 'created_at', title: 'Created At', width: 200 },
+  { colKey: 'user_agent', title: 'User Agent', width: 250 },
 ];
 const VisitLogUri = '/0x/user/visit-log';
 

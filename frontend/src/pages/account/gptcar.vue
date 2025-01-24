@@ -3,7 +3,7 @@
     <t-card class="list-card-container">
       <t-row justify="space-between">
         <div class="left-operation-container">
-          <t-button @click="handleShowDialog()">新增</t-button>
+          <t-button @click="handleShowDialog()">Add</t-button>
         </div>
       </t-row>
 
@@ -27,7 +27,7 @@
               </div>
             </template>
 
-            <t-link variant="outline"> ChatGPT 账号 {{ row.gpt_account_name_list.length }} 个 </t-link>
+            <t-link variant="outline"> ChatGPT Account {{ row.gpt_account_name_list.length }} 个 </t-link>
           </t-popup>
           <!-- <t-space style="display: flex; flex-wrap: wrap; max-width: 100%; overflow: hidden">
             <t-tag v-for="item in row.gpt_account_name_list" :key="item" max-width="80"> {{ item }} </t-tag>
@@ -56,11 +56,11 @@
           :label-width="120"
           @submit="handleAdd"
         >
-          <t-form-item label="号池名称" name="car_name">
+          <t-form-item label="Pool Name" name="car_name">
             <t-input v-model="newGptCar.car_name" :disabled="actionType == 'edit'" style="width: 240px"></t-input>
           </t-form-item>
 
-          <t-form-item label="选择 ChatGPT" name="gptcar_list">
+          <t-form-item label="Select ChatGPT" name="gptcar_list">
             <t-space style="width: 100%">
               <t-select
                 v-model="newGptCar.gpt_account_list"
@@ -79,7 +79,7 @@
             </t-space>
           </t-form-item>
 
-          <t-form-item label="备注" name="remark">
+          <t-form-item label="Remark" name="remark">
             <t-textarea v-model="newGptCar.remark"></t-textarea>
           </t-form-item>
         </t-form>
@@ -88,7 +88,7 @@
       <!-- 确认删除 dialog -->
       <t-dialog
         v-model:visible="dialogVisibleDelete"
-        header="确认删除该 号池 吗"
+        header="Are you sure you want to delete the pool?"
         width="600"
         :on-confirm="handleDelete"
       >
@@ -123,13 +123,13 @@ const GptCarUri = '/0x/chatgpt/car';
 
 const tableData = ref<TableData[]>([]);
 const columns: TableProps['columns'] = [
-  { colKey: 'car_name', title: '号池名称', width: 220 },
-  { colKey: 'gpt_account_name_list', title: 'gpt 账号', width: 200 },
-  { colKey: 'created_time', title: '创建时间', width: 200 },
+  { colKey: 'car_name', title: 'Pool Name', width: 220 },
+  { colKey: 'gpt_account_name_list', title: 'GPT Account', width: 200 },
+  { colKey: 'created_time', title: 'Created Time', width: 200 },
 
-  { colKey: 'remark', title: '备注', width: 220 },
+  { colKey: 'remark', title: 'Remark', width: 220 },
 
-  { width: 200, colKey: 'op', title: '操作' },
+  { width: 200, colKey: 'op', title: 'Action' },
 ];
 
 const pagination = {

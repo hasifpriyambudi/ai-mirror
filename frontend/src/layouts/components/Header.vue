@@ -22,12 +22,6 @@
 
           <!-- 全局通知 -->
           <notice />
-
-          <t-tooltip placement="bottom" :content="$t('layout.header.code')">
-            <t-button theme="default" shape="square" variant="text" @click="navToGitHub">
-              <t-icon name="logo-github" />
-            </t-button>
-          </t-tooltip>
           <!-- <t-tooltip placement="bottom" :content="$t('layout.header.help')">
             <t-button theme="default" shape="square" variant="text" @click="navToHelper">
               <t-icon name="help-circle" />
@@ -173,9 +167,6 @@ const handleLogout = () => {
   });
 };
 
-const navToGitHub = () => {
-  window.open('https://github.com/dairoot/ChatGPT-Mirror');
-};
 </script>
 <style lang="less" scoped>
 .@{starter-prefix}-header {

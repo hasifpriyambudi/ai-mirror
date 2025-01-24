@@ -1,4 +1,4 @@
-FROM node:22-alphine AS builder
+FROM node:22-slim AS builder
 
 WORKDIR /app
 

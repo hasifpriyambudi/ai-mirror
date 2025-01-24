@@ -5,7 +5,7 @@
       <t-row justify="space-between">
         <div class="left-operation-container">
           <!-- <t-button @click="$router.push('/login')">访问</t-button> -->
-          <t-button @click="handleShowDialog()">新增</t-button>
+          <t-button @click="handleShowDialog()">Add</t-button>
           <t-button
             variant="base"
             :loading="loading"
@@ -13,7 +13,7 @@
             :disabled="!selectedRowKeys.length"
             @click="BatcModelLimit"
           >
-            限制</t-button
+            Delete</t-button
           >
           <p v-if="!!selectedRowKeys.length" class="selected-count">
             {{ $t('pages.listBase.select') }} {{ selectedRowKeys.length }} {{ $t('pages.listBase.items') }}
@@ -38,7 +38,7 @@
         </template>
 
         <template #title-username>
-          <div><user-circle-icon style="margin-right: 8px" />用户</div>
+          <div><user-circle-icon style="margin-right: 8px" />User</div>
         </template>
 
         <template #last_login="{ row }">
@@ -46,20 +46,20 @@
         </template>
 
         <template #chatgpt_count="{ row }">
-          <t-link theme="primary" @click="getChatGPTDetails(row)">已绑定: {{ row.chatgpt_count }} 个</t-link>
+          <t-link theme="primary" @click="getChatGPTDetails(row)">Bound: {{ row.chatgpt_count }} 个</t-link>
         </template>
 
         <template #isolated_session="{ row }">
           <t-switch :value="row.isolated_session" :custom-value="[true, false]">
             <!--             @change="(value) => changeIsolatedSession(row, Number(value))" -->
-            <template #label="slotProps">{{ slotProps.value == true ? '是' : '否' }} </template>
+            <template #label="slotProps">{{ slotProps.value == true ? 'Yes' : 'No' }} </template>
           </t-switch>
         </template>
 
         <template #op="slotProps">
           <t-space>
-            <t-link theme="primary" @click="handleEdit(slotProps.row)"> 编辑</t-link>
-            <t-link theme="danger" @click="handleClickDelete(slotProps.row)"> 删除</t-link>
+            <t-link theme="primary" @click="handleEdit(slotProps.row)"> Edit</t-link>
+            <t-link theme="danger" @click="handleClickDelete(slotProps.row)"> Delete</t-link>
           </t-space>
         </template>
       </t-table>
@@ -67,7 +67,7 @@
       <!-- chatgpt 账号 -->
       <t-dialog
         v-model:visible="showChatGPTDetailsDialog"
-        title="ChatGPT 账号详情"
+        title="ChatGPT Account"
         width="950px"
         :cancel-btn="null"
         :confirm-btn="null"
@@ -85,26 +85,26 @@
           :label-width="120"
           @submit="handleAdd"
         >
-          <t-form-item label="状态" name="is_active">
+          <t-form-item label="Status" name="is_active">
             <t-radio-group v-model="newUser.is_active" class="side-mode-radio">
-              <t-radio-button key="true" :value="true" label="启用" />
-              <t-radio-button key="false" :value="false" label="停用" />
+              <t-radio-button key="true" :value="true" label="Enable" />
+              <t-radio-button key="false" :value="false" label="Disable" />
             </t-radio-group>
           </t-form-item>
 
-          <t-form-item label="用户名" name="username">
+          <t-form-item label="Username" name="username">
             <t-input v-model="newUser.username" :disabled="actionType == 'edit'" style="width: 240px"></t-input>
           </t-form-item>
 
-          <t-form-item v-if="actionType == 'add'" label="密码" name="password">
+          <t-form-item v-if="actionType == 'add'" label="Password" name="password">
             <t-input v-model="newUser.password" style="width: 240px"></t-input>
           </t-form-item>
 
-          <t-form-item label="独立会话" name="isolated_session">
+          <t-form-item label="Private" name="isolated_session">
             <t-switch v-model="newUser.isolated_session" :custom-value="[true, false]" />
           </t-form-item>
 
-          <t-form-item label="过期日期" name="expired_date">
+          <t-form-item label="Expired Date" name="expired_date">
             <t-date-picker
               v-model="newUser.expired_date"
               placeholder=""
@@ -136,7 +136,7 @@
             </t-space>
           </t-form-item>
 
-          <t-form-item label="限制" name="model_limit">
+          <t-form-item label="Limit" name="model_limit">
             <t-space direction="vertical">
               <t-switch
                 v-model="hasModelLimit"
@@ -155,15 +155,15 @@
                           :value="model.value"
                         />
                       </t-select>
-                      <span>限制</span>
-                      <t-input-adornment prepend="每" append="分钟">
+                      <span>Delete</span>
+                      <t-input-adornment prepend="每" append="Minutes">
                         <t-input-number v-model="line.every_minute" theme="normal" min="0" style="width: 70px" />
                       </t-input-adornment>
                       <span>发送</span>
                       <t-input-adornment append="条">
                         <t-input-number v-model="line.limit_count" theme="normal" min="0" style="width: 70px" />
                       </t-input-adornment>
-                      <span>消息</span>
+                      <span>Message</span>
 
                       <div>
                         <t-button
@@ -193,7 +193,7 @@
             </t-space>
           </t-form-item>
 
-          <t-form-item label="备注" name="remark">
+          <t-form-item label="Remark" name="remark">
             <t-textarea v-model="newUser.remark"></t-textarea>
           </t-form-item>
         </t-form>
@@ -203,7 +203,7 @@
       <t-dialog
         v-model:visible="showModelLimitDialog"
         :on-confirm="handleBatchModelLimitConfirm"
-        title="批量限制模型"
+        title="Batch Restrication Model"
         width="800px"
       >
         <t-form
@@ -214,7 +214,7 @@
           :label-width="120"
           @submit="handlebatchModelLimit"
         >
-          <t-form-item label="限制" name="model_limit">
+          <t-form-item label="Model Limit" name="model_limit">
             <t-space direction="vertical">
               <t-switch
                 v-model="hasModelLimit"
@@ -233,15 +233,15 @@
                           :value="model.value"
                         />
                       </t-select>
-                      <span>限制</span>
-                      <t-input-adornment prepend="每" append="分钟">
+                      <span>Limit</span>
+                      <t-input-adornment prepend="每" append="Minutes">
                         <t-input-number v-model="line.every_minute" theme="normal" min="0" style="width: 70px" />
                       </t-input-adornment>
                       <span>发送</span>
                       <t-input-adornment append="条">
                         <t-input-number v-model="line.limit_count" theme="normal" min="0" style="width: 70px" />
                       </t-input-adornment>
-                      <span>消息</span>
+                      <span>Message</span>
 
                       <div>
                         <t-button
@@ -350,16 +350,16 @@ const onSelectChange: TableProps['onSelectChange'] = (value, _) => {
 
 const columns: TableProps['columns'] = [
   { colKey: 'row-select', type: 'multiple', checkProps: ({ row }) => ({ disabled: row.username === 'free_account' }) },
-  { colKey: 'is_active', title: '状态', width: 100 },
+  { colKey: 'is_active', title: 'Status', width: 100 },
   { colKey: 'username', title: 'title-username', width: 200, fixed: 'left' },
-  { colKey: 'isolated_session', title: '独立会话', width: 100 },
+  { colKey: 'isolated_session', title: 'Private', width: 100 },
   { colKey: 'chatgpt_count', title: 'ChatGPT', width: 120 },
-  { colKey: 'use_count', title: '当日用量', width: 100 },
-  { colKey: 'last_login', title: '最近登录时间', width: 160 },
-  { colKey: 'expired_date', title: '过期日期', width: 160 },
-  { colKey: 'date_joined', title: '注册时间', width: 160 },
-  { colKey: 'remark', title: '备注', width: 200 },
-  { width: 200, colKey: 'op', title: '操作' },
+  { colKey: 'use_count', title: 'Used', width: 100 },
+  { colKey: 'last_login', title: 'Last Login', width: 160 },
+  { colKey: 'expired_date', title: 'Expired Date', width: 160 },
+  { colKey: 'date_joined', title: 'Created At', width: 160 },
+  { colKey: 'remark', title: 'Remark', width: 200 },
+  { width: 200, colKey: 'op', title: 'Action' },
 ];
 
 const modelLimitValidator: CustomValidator = (val) => {
@@ -384,7 +384,7 @@ const rules: FormProps['rules'] = {
   is_active: [{ required: true, message: 'Please input is_active', trigger: 'blur' }],
   username: [
     { required: true, message: 'Please input username', trigger: 'blur' },
-    { validator: (val) => val.length >= 4, message: '至少 4 个字符' },
+    { validator: (val) => val.length >= 4, message: 'Min Length 4' },
   ],
   password: [{ required: true, message: 'Please input password', trigger: 'blur' }],
   isolated_session: [{ required: true, message: 'Please select isolated_session', trigger: 'blur' }],

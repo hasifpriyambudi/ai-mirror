@@ -7,7 +7,7 @@ export default {
   productType: '产品类型',
   productRemark: '备注',
   productStatusEnum: {
-    off: '停用',
-    on: '启用',
+    off: 'Disable',
+    on: 'Enable',
   },
 };

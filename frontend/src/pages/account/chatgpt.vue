@@ -23,8 +23,8 @@
         @page-change="rehandlePageChange"
       >
         <template #auth_status="{ row }">
-          <t-tag v-if="row.auth_status === false" theme="danger" variant="light"> 已过期 </t-tag>
-          <t-tag v-if="row.auth_status === true" theme="success" variant="light"> 运行中 </t-tag>
+          <t-tag v-if="row.auth_status === false" theme="danger" variant="light"> Expired </t-tag>
+          <t-tag v-if="row.auth_status === true" theme="success" variant="light"> Active </t-tag>
         </template>
 
         <!--
@@ -78,7 +78,7 @@
                 :autosize="{ minRows: 5, maxRows: 5 }"
                 autofocus
                 size="large"
-                placeholder="请输入 Access Token 或 Session Token 或 Refresh Token。一行一串Token，多个Token请换行输入。"
+                placeholder="Please enter Access Token or Session Token or Refresh Token. one line of Token, more than one line of Token, please change the line."
               ></t-textarea>
               <span style="font-size: 12px; color: #888">
                 <t-link target="_blank" theme="primary" size="small" href="https://chatgpt.com/api/auth/session">
@@ -99,10 +99,10 @@
       </t-dialog>
 
       <!-- 编辑 备注信息 -->
-      <t-dialog v-model:visible="dialogVisibleEdit" header="编辑信息" width="50%" :on-confirm="handleEditConfirm">
+      <t-dialog v-model:visible="dialogVisibleEdit" header="Edit Information" width="50%" :on-confirm="handleEditConfirm">
         <t-form v-loading="loading" :data="editChatInfo" :label-width="120">
-          <t-form-item label="备注信息">
-            <t-input v-model="editChatInfo.remark" size="large" placeholder="备注信息"></t-input>
+          <t-form-item label="Remarks">
+            <t-input v-model="editChatInfo.remark" size="large" placeholder="Remarks"></t-input>
           </t-form-item>
         </t-form>
       </t-dialog>
@@ -110,7 +110,7 @@
       <!-- 确认删除 dialog -->
       <t-dialog
         v-model:visible="dialogVisibleDelete"
-        header="确认删除该 ChatGPT token 吗"
+        header="Delete ChatGPT token?"
         width="600"
         :on-confirm="handleDelete"
       >
@@ -155,15 +155,15 @@ const rehandlePageChange = (curr: any) => {
 const columns: TableProps['columns'] = [
   { colKey: 'row-select', type: 'multiple' },
   { colKey: 'id', title: 'ID', width: 50 },
-  { colKey: 'chatgpt_username', title: 'ChatGPT 账号', width: 220, fixed: 'left' },
-  { colKey: 'auth_status', title: '状态', width: 100, fixed: 'left' },
-  { colKey: 'plan_type', title: '类型', width: 100 },
+  { colKey: 'chatgpt_username', title: 'ChatGPT Username', width: 220, fixed: 'left' },
+  { colKey: 'auth_status', title: 'Status', width: 100, fixed: 'left' },
+  { colKey: 'plan_type', title: 'Type', width: 100 },
   // { colKey: 'use_count', title: '近期用量', width: 350 },
-  { colKey: 'access_token_exp', title: 'Access Token 过期时间', width: 200 },
-  { colKey: 'created_time', title: '创建时间', width: 200 },
+  { colKey: 'access_token_exp', title: 'Access Token Expired', width: 200 },
+  { colKey: 'created_time', title: 'Created TIme', width: 200 },
   // { colKey: 'updated_at', title: '最近更新时间', width: 200 },
-  { colKey: 'remark', title: '备注' },
-  { width: 200, colKey: 'op', title: '操作' },
+  { colKey: 'remark', title: 'Remark' },
+  { width: 200, colKey: 'op', title: 'Action' },
 ];
 const showDialog = ref(false);
 const dialogVisibleDelete = ref(false);

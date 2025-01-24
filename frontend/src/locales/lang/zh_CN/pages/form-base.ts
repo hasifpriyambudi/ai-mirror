@@ -19,7 +19,7 @@ export default {
   uploadFile: '上传合同',
   uploadTips: '请上传pdf文件，大小在60M以内',
   otherInfo: '其他信息',
-  remark: '备注',
+  remark: 'Remark',
   remarkPlaceholder: '请输入备注',
   notaryPublic: '公证人',
   confirm: '确认提交',

@@ -2,7 +2,7 @@ export default {
   export: '导出合同',
   create: '新建合同',
   select: '已选',
-  items: '项',
+  items: 'Items',
   contractName: '合同名称',
   contractStatus: '合同状态',
   contractNum: '合同编号',

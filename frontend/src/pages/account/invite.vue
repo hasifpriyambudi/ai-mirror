@@ -74,12 +74,12 @@ const idDelete = ref('');
 
 const columns: TableProps['columns'] = [
   { colKey: 'id', title: 'ID' },
-  { colKey: 'chatgpt_username', title: 'ChatGPT 账号', width: 200 },
-  { colKey: 'invite_count', title: '邀请数量' },
-  { colKey: 'used_count', title: '已用数量' },
-  { colKey: 'expires_at', title: '过期时间', width: 200 },
-  { colKey: 'invite_url', title: '邀请链接', width: 300 },
-  { width: 200, colKey: 'op', title: '操作' },
+  { colKey: 'chatgpt_username', title: 'ChatGPT Username', width: 200 },
+  { colKey: 'invite_count', title: 'Invite Count' },
+  { colKey: 'used_count', title: 'Used Count' },
+  { colKey: 'expires_at', title: 'Expired At', width: 200 },
+  { colKey: 'invite_url', title: 'Invite URL', width: 300 },
+  { width: 200, colKey: 'op', title: 'Action' },
 ];
 
 onMounted(async () => {
@@ -106,13 +106,13 @@ const FORM_RULES: FormProps['rules'] = {
   invite_count: [{ required: true, message: 'Please input invite count', trigger: 'blur' }],
 };
 const ExpiresAtList = [
-  { label: '5 分钟', value: 5 * 60 },
-  { label: '10 分钟', value: 10 * 60 },
-  { label: '30 分钟', value: 30 * 60 },
-  { label: '1 小时', value: 60 * 60 },
-  { label: '6 小时', value: 360 * 60 },
-  { label: '1 天', value: 1440 * 60 },
-  { label: '3 天', value: 2160 * 60 },
+  { label: '5 Minute', value: 5 * 60 },
+  { label: '10 Minute', value: 10 * 60 },
+  { label: '30 Minute', value: 30 * 60 },
+  { label: '1 Hour', value: 60 * 60 },
+  { label: '6 Hour', value: 360 * 60 },
+  { label: '1 Day', value: 1440 * 60 },
+  { label: '3 Day', value: 2160 * 60 },
 ];
 const inviteUserFormRef = ref<FormInstanceFunctions>(null);
 

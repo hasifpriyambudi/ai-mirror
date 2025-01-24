@@ -8,7 +8,7 @@
       </template>
       <menu-content :nav-data="menu" />
       <template #operations>
-        <span :class="versionCls"> {{ !collapsed ? 'ChatGPT Mirror' : '' }} </span>
+        <span :class="versionCls"> {{ !collapsed ? 'ChatGPT' : '' }} </span>
       </template>
     </t-menu>
     <div :class="`${prefix}-side-nav-placeholder${collapsed ? '-hidden' : ''}`"></div>

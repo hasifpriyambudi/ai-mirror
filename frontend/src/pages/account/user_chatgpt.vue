@@ -8,12 +8,12 @@
     hover
   >
     <template #auth_status="{ row }">
-      <t-tag v-if="row.auth_status === false" theme="danger" variant="light"> 已过期 </t-tag>
-      <t-tag v-if="row.auth_status === true" theme="success" variant="light"> 运行中 </t-tag>
+      <t-tag v-if="row.auth_status === false" theme="danger" variant="light"> Expired </t-tag>
+      <t-tag v-if="row.auth_status === true" theme="success" variant="light"> Active </t-tag>
     </template>
 
     <template #op="slotProps">
-      <t-link theme="primary" @click="handleCopyUrl(slotProps.row.mirror_token)"> 复制</t-link>
+      <t-link theme="primary" @click="handleCopyUrl(slotProps.row.mirror_token)"> Make a copy</t-link>
     </template>
   </t-table>
 </template>
@@ -36,7 +36,7 @@ const tableChatgptDetailsData = ref<TableChatgptDetailsData[]>([]);
 const columnsChatgptDetails: TableProps['columns'] = [
   { colKey: 'chatgpt_username', title: 'ChatGPT', width: 80 },
   { colKey: 'plan_type', title: '类型', width: 30 },
-  { colKey: 'auth_status', title: '状态', width: 30 },
+  { colKey: 'auth_status', title: 'Status', width: 30 },
   { colKey: 'mirror_token', title: 'Mirror Token (用于 API, 该token不会变更)', width: 100 },
   { colKey: 'op', title: '免登链接', width: 30 },
 ];

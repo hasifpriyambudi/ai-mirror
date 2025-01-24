@@ -2,7 +2,7 @@
   <div>
     <t-dialog
       :visible="tableVisible"
-      header="请选择 ChatGPT 账号"
+      header="Select ChatGPT Account"
       :cancel-btn="null"
       :confirm-btn="null"
       :on-close="onClose"
@@ -34,12 +34,12 @@
                 </div>
 
                 <div style="font-size: 12px; display: flex; justify-content: space-between">
-                  <div>实时状态</div>
+                  <div>Status</div>
                   <div>
-                    <span v-if="item.auth_status === false"> 已过期 </span>
-                    <span v-else-if="getGPTUsePercent(item) < 40"> 空闲 </span>
-                    <span v-else-if="getGPTUsePercent(item) < 80"> 忙碌 </span>
-                    <span v-else> 繁忙 | 可用 </span>
+                    <span v-if="item.auth_status === false"> Expired </span>
+                    <span v-else-if="getGPTUsePercent(item) < 40"> Idle </span>
+                    <span v-else-if="getGPTUsePercent(item) < 80"> Busy </span>
+                    <span v-else> Busy | Available </span>
                   </div>
                 </div>
 
