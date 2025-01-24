@@ -23,5 +23,5 @@ export default {
   remarkPlaceholder: '请输入备注',
   notaryPublic: '公证人',
   confirm: '确认提交',
-  cancel: '取消',
+  cancel: 'Cancel',
 };
