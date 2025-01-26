@@ -2,7 +2,7 @@ import os
 from pathlib import Path
 
 DEBUG = True
-SHOW_GITHUB = True
+SHOW_GITHUB = False
 FREE_ACCOUNT_USERNAME = "free_account"
 
 ADMIN_USERNAME = "dairoot"
