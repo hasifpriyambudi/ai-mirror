@@ -365,13 +365,13 @@ const columns: TableProps['columns'] = [
 const modelLimitValidator: CustomValidator = (val) => {
   for (const item of val) {
     if (!item.model_name) {
-      return { result: false, message: '模型不能为空', type: 'error' };
+      return { result: false, message: 'The model cannot be empty', type: 'error' };
     }
     if (!item.every_minute || item.every_minute <= 0) {
-      return { result: false, message: '每分钟限制必须大于0', type: 'error' };
+      return { result: false, message: 'The per minute limit must be greater than 0', type: 'error' };
     }
     if (!item.limit_count || item.limit_count <= 0) {
-      return { result: false, message: '发送条数必须大于0', type: 'error' };
+      return { result: false, message: 'The number of messages sent must be greater than 0', type: 'error' };
     }
   }
 

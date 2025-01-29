@@ -30,8 +30,8 @@
                   size="large"
                 ></t-textarea>
                 <span style="font-size: 12px; color: #888">
-                  Session Token 获取说明：
-                  <t-link target="_blank" theme="primary" size="small" :href="ChatgptTokenTutorialUrl">手动获取</t-link>
+                  Session Token Get Instructions：
+                  <t-link target="_blank" theme="primary" size="small" :href="ChatgptTokenTutorialUrl">Manual Access</t-link>
                   <!-- or
                   <t-link target="_blank" theme="primary" size="small" :href="ChatgptTokenAuthUrl">自动获取</t-link> -->
                 </span>

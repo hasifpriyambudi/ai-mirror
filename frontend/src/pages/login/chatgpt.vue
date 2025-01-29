@@ -151,7 +151,7 @@ const onSelect = async (chatgptId: number) => {
 
   const data = await response.json();
   if (response.status !== 200) {
-    MessagePlugin.error(JSON.stringify(Object.values(data)[0]));
+    MessagePlugin.error(JSON.stringify("wrong username/password"));
   } else {
     Cookies.set('user-gateway-token', data['user-gateway-token'], { expires: 7 });
     MessagePlugin.success('Success login');

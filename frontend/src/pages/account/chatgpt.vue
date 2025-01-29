@@ -3,7 +3,7 @@
     <t-card class="list-card-container">
       <t-row justify="space-between">
         <div class="left-operation-container">
-          <t-button @click="showDialog = true">录入</t-button>
+          <t-button @click="showDialog = true">Add</t-button>
 
           <p v-if="!!selectedRowKeys.length" class="selected-count">
             {{ $t('pages.listBase.select') }} {{ selectedRowKeys.length }} {{ $t('pages.listBase.items') }}
@@ -61,9 +61,9 @@
         <template #op="slotProps">
           <t-space>
             <!-- <t-link theme="primary" @click="handleUpdate(slotProps.row)">更新</t-link> -->
-            <t-link theme="primary" @click="handleEdit(slotProps.row)">编辑</t-link>
+            <t-link theme="primary" @click="handleEdit(slotProps.row)">Edit</t-link>
 
-            <t-link theme="danger" @click="handleClickDelete(slotProps.row)">删除</t-link>
+            <t-link theme="danger" @click="handleClickDelete(slotProps.row)">Remove</t-link>
           </t-space>
         </template>
       </t-table>
@@ -83,16 +83,16 @@
               <span style="font-size: 12px; color: #888">
                 <t-link target="_blank" theme="primary" size="small" href="https://chatgpt.com/api/auth/session">
                   Access Token</t-link
-                >：有效期10天
+                >：Valid 10 days
               </span>
               <span style="font-size: 12px; color: #888">
                 <t-link target="_blank" theme="primary" size="small" :href="ChatgptTokenTutorialUrl"
                   >Session Token</t-link
-                >：有效期30天
+                >: Valid 30 days
                 <!-- or
                 <t-link target="_blank" theme="primary" size="small" :href="ChatgptTokenAuthUrl">自动获取</t-link> -->
               </span>
-              <span style="font-size: 12px; color: #888"> Refresh Token：有效期永久 </span>
+              <span style="font-size: 12px; color: #888"> Refresh Token：Permanent </span>
             </div>
           </t-form-item>
         </t-form>

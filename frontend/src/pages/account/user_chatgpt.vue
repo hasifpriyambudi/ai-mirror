@@ -35,10 +35,10 @@ const tableChatgptDetailsData = ref<TableChatgptDetailsData[]>([]);
 
 const columnsChatgptDetails: TableProps['columns'] = [
   { colKey: 'chatgpt_username', title: 'ChatGPT', width: 80 },
-  { colKey: 'plan_type', title: '类型', width: 30 },
+  { colKey: 'plan_type', title: 'Plan Type', width: 30 },
   { colKey: 'auth_status', title: 'Status', width: 30 },
-  { colKey: 'mirror_token', title: 'Mirror Token (用于 API, 该token不会变更)', width: 100 },
-  { colKey: 'op', title: '免登链接', width: 30 },
+  { colKey: 'mirror_token', title: 'Mirror Token (for API, this token will not change)', width: 100 },
+  { colKey: 'op', title: 'Action', width: 30 },
 ];
 
 const getChatGPTDetails = async (user: any) => {

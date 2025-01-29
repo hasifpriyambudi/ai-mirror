@@ -12,15 +12,15 @@
         <t-form-item label="ChatGPT" name="username">
           <t-input v-model="inviteUser.chatgpt_username" disabled></t-input>
         </t-form-item>
-        <t-form-item label="过期时间" name="expires_time">
-          <t-select v-model="inviteUser.expires_time" :options="ExpiresAtList" placeholder="过期时间"></t-select>
+        <t-form-item label="Expired Time" name="expires_time">
+          <t-select v-model="inviteUser.expires_time" :options="ExpiresAtList" placeholder="Expired time"></t-select>
         </t-form-item>
-        <t-form-item label="邀请码数量" name="invite_count">
+        <t-form-item label="Invite count" name="invite_count">
           <t-input v-model="inviteUser.invite_count"></t-input>
         </t-form-item>
 
         <t-form-item>
-          <t-button theme="primary" type="submit">创建</t-button>
+          <t-button theme="primary" type="submit">Submit</t-button>
         </t-form-item>
       </t-form>
     </t-card>
@@ -41,7 +41,7 @@
 
         <template #op="slotProps">
           <t-space>
-            <t-link theme="danger" @click="handleClickDelete(slotProps.row)">删除</t-link>
+            <t-link theme="danger" @click="handleClickDelete(slotProps.row)">Remove</t-link>
           </t-space>
         </template>
       </t-table>
