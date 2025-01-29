@@ -37,7 +37,7 @@ class AccountLogin(ObtainAuthToken):
 
         user = serializer.validated_data['user']
         if user.expired_date and user.expired_date <= timezone.now().date():
-            raise ValidationError({"message": "账号已过期"})
+            raise ValidationError({"message": "Account has expired"})
 
         user.last_login = timezone.now()
         user.save()
@@ -57,7 +57,7 @@ class AccountRegister(APIView):
     def post(self, request, *args, **kwargs):
 
         if not ALLOW_REGISTER:
-            raise ValidationError({"message": "当前系统禁止注册账号"})
+            raise ValidationError({"message": "Account registration is prohibited in the current system"})
 
         serializer = UserRegisterSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
@@ -67,7 +67,7 @@ class AccountRegister(APIView):
 
         user = User.objects.filter(username=serializer.data["username"]).first()
         if user and not authenticate(username=serializer.data["username"], password=serializer.data["password"]):
-            raise ValidationError({"message": "账号已存在"})
+            raise ValidationError({"message": "Account Already Exists"})
 
         # 创建默认号池
         from app.chatgpt.models import ChatgptCar
@@ -76,7 +76,7 @@ class AccountRegister(APIView):
             defaults={
                 "created_time": int(time.time()),
                 "updated_time": int(time.time()),
-                "remark": "用户注册时，系统自动创建"
+                "remark": "When a user registers, the system automatically creates"
             })
         gpt_account_list = list(chatgptcar.gpt_account_list)
         gpt_account_list.append(chatgptaccount_id)

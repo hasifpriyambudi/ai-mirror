@@ -89,7 +89,7 @@ class ChatGPTLoginView(APIView):
         user_gpt_id_list = [i.id for i in user_gpt_list]
 
         if serializer.data["chatgpt_id"] not in user_gpt_id_list:
-            raise ValidationError("该账号不属于当前用户")
+            raise ValidationError("This account does not belong to the current user")
 
         chatgpt = ChatgptAccount.get_by_id(serializer.data["chatgpt_id"])
         user_name = request.user.username + ip if request.user.username == "free_account" else request.user.username
