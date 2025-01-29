@@ -5,21 +5,21 @@ from django.db import models
 
 class ChatgptCar(models.Model):
     car_name = models.CharField(unique=True, max_length=32)
-    remark = models.CharField(max_length=128, blank=True, verbose_name="备注")
+    remark = models.CharField(max_length=128, blank=True, verbose_name="Remark")
     gpt_account_list = models.JSONField(default=list)
-    created_time = models.IntegerField(db_index=True, blank=True, verbose_name="创建时间")
-    updated_time = models.IntegerField(db_index=True, blank=True, verbose_name="最后修改时间")
+    created_time = models.IntegerField(db_index=True, blank=True, verbose_name="Creation time")
+    updated_time = models.IntegerField(db_index=True, blank=True, verbose_name="Updated time")
 
 class ChatgptAccount(models.Model):
     chatgpt_username = models.CharField(max_length=64, unique=True)
-    auth_status = models.BooleanField(default=True, verbose_name="授权状态")
+    auth_status = models.BooleanField(default=True, verbose_name="authorization status")
     plan_type = models.CharField(max_length=32)
     access_token = models.TextField()
     session_token = models.TextField(null=True, blank=True)
     refresh_token = models.TextField(null=True, blank=True)
-    remark = models.TextField(null=True, blank=True,verbose_name="备注")
-    created_time = models.IntegerField(db_index=True, blank=True, verbose_name="创建时间")
-    updated_time = models.IntegerField(db_index=True, blank=True, verbose_name="最后修改时间")
+    remark = models.TextField(null=True, blank=True,verbose_name="Remark")
+    created_time = models.IntegerField(db_index=True, blank=True, verbose_name="Created time")
+    updated_time = models.IntegerField(db_index=True, blank=True, verbose_name="Updated time")
 
     @classmethod
     def get_by_gptcar_list(cls, gptcar_list):

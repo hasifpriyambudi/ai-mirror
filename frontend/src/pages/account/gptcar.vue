@@ -255,7 +255,7 @@ const handleDelete = async () => {
     MessagePlugin.error(JSON.stringify(Object.values(data)[0]));
   } else {
     await getChatCarList();
-    MessagePlugin.success('删除成功');
+    MessagePlugin.success('Deleted successfully');
   }
 };
 </script>

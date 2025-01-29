@@ -49,7 +49,7 @@
       <!-- 确认删除 dialog -->
       <t-dialog
         v-model:visible="dialogVisibleDelete"
-        header="确认删除该邀请链接吗？"
+        header="Confirmation to remove this invitation link?"
         width="500"
         :on-confirm="handleDelete"
       >
@@ -151,7 +151,7 @@ const handleDelete = async () => {
     MessagePlugin.error(JSON.stringify(Object.values(data)[0]));
   } else {
     await getInviteCodeList();
-    MessagePlugin.success('删除成功');
+    MessagePlugin.success('Deleted successfully');
   }
 };
 
@@ -166,7 +166,7 @@ const addInviteCode = async () => {
     MessagePlugin.error(JSON.stringify(Object.values(data)[0]));
   } else {
     await getInviteCodeList();
-    MessagePlugin.success('删除成功');
+    MessagePlugin.success('Deleted successfully');
   }
 };
 
@@ -176,7 +176,7 @@ const handleInvite: FormProps['onSubmit'] = async ({ validateResult, firstError 
     console.log('inviteUser', inviteUser.value);
     await addInviteCode();
   } else {
-    console.error('表单引用未定义', firstError);
+    console.error('Form reference undefined', firstError);
   }
 };
 

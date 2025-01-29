@@ -8,7 +8,7 @@ export default [
     name: 'Account',
     meta: {
       title: {
-        zh_CN: '账号管理',
+        zh_CN: 'Account Management',
         en_US: 'Account Management',
       },
       icon: 'user-circle',
@@ -49,7 +49,7 @@ export default [
         component: () => import('@/pages/account/gptcar.vue'),
         meta: {
           title: {
-            zh_CN: '号池',
+            zh_CN: 'gpt pool',
             en_US: 'gpt pool',
           },
         },
@@ -63,7 +63,7 @@ export default [
     name: 'System',
     meta: {
       title: {
-        zh_CN: '系统管理',
+        zh_CN: 'System Management',
         en_US: 'System Management',
       },
       icon: 'brightness',
@@ -76,7 +76,7 @@ export default [
         component: () => import('@/pages/system/loginlog.vue'),
         meta: {
           title: {
-            zh_CN: '登录日志',
+            zh_CN: 'Login Log',
             en_US: 'Login Log',
           },
         },

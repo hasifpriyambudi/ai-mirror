@@ -7,7 +7,7 @@ FREE_ACCOUNT_USERNAME = "free_account"
 
 ADMIN_USERNAME = "dairoot"
 ADMIN_PASSWORD = "dairoot"
-ALLOW_REGISTER = True
+ALLOW_REGISTER = False
 # CHATGPT_GATEWAY_URL = "https://dairoot.serv00.net"
 CHATGPT_GATEWAY_URL = "http://127.0.0.1:8787"
 

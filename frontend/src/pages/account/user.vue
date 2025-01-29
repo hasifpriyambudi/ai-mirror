@@ -488,7 +488,7 @@ const addOrUpdateUser = async () => {
     await getUserList();
     newUser.value = defaultUser;
     showDialog.value = false;
-    MessagePlugin.success('新增成功');
+    MessagePlugin.success('Added successfully');
   }
 };
 
@@ -510,7 +510,7 @@ const batchUpdateUserModelLimit = async () => {
     await getUserList();
     batchModelLimitUser.value = JSON.parse(JSON.stringify({ model_limit: defaultUser.model_limit }));
     showModelLimitDialog.value = false;
-    MessagePlugin.success('限制成功');
+    MessagePlugin.success('Limit success');
   }
 };
 
@@ -548,7 +548,7 @@ const handleDelete = async () => {
     MessagePlugin.error(JSON.stringify(Object.values(data)[0]));
   } else {
     await getUserList();
-    MessagePlugin.success('删除成功');
+    MessagePlugin.success('Deleted successfully');
   }
 };
 
@@ -556,7 +556,7 @@ const handlebatchModelLimit: FormProps['onSubmit'] = async ({ validateResult, fi
   if (validateResult === true) {
     batchUpdateUserModelLimit();
   } else {
-    console.error('表单引用未定义', firstError);
+    console.error('Form reference undefined', firstError);
   }
 };
 
@@ -565,7 +565,7 @@ const handleAdd: FormProps['onSubmit'] = async ({ validateResult, firstError }) 
   if (validateResult === true) {
     addOrUpdateUser();
   } else {
-    console.error('表单引用未定义', firstError);
+    console.error('Form reference undefined', firstError);
   }
 };
 

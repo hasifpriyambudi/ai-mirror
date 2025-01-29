@@ -54,7 +54,7 @@ const getChatGPTDetails = async (user: any) => {
 const handleCopyUrl = (mirrorToken: string) => {
   const notLoginUrl = `${window.location.origin}/api/not-login?user_gateway_token=${mirrorToken}`;
   navigator.clipboard.writeText(notLoginUrl);
-  MessagePlugin.success('复制成功');
+  MessagePlugin.success('Copy Success');
 };
 
 defineExpose({

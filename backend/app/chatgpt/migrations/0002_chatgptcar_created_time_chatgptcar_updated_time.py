@@ -13,13 +13,13 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='chatgptcar',
             name='created_time',
-            field=models.IntegerField(blank=True, db_index=True, default=1, verbose_name='创建时间'),
+            field=models.IntegerField(blank=True, db_index=True, default=1, verbose_name='Creation Name'),
             preserve_default=False,
         ),
         migrations.AddField(
             model_name='chatgptcar',
             name='updated_time',
-            field=models.IntegerField(blank=True, db_index=True, default=1, verbose_name='最后修改时间'),
+            field=models.IntegerField(blank=True, db_index=True, default=1, verbose_name='last updated time'),
             preserve_default=False,
         ),
     ]

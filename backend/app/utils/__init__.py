@@ -32,7 +32,7 @@ def req_gateway(method, uri, *args, **kwargs):
     try:
         res = requests.request(method, url, headers=headers, *args, **kwargs, allow_redirects=False)
     except RequestException as e:
-        raise ValidationError("请求异常, 网关服务未正常启用")
+        raise ValidationError("Request anomaly, gateway service not enabled properly")
 
     if res.status_code != 200:
         try:

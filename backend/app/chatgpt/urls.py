@@ -10,5 +10,4 @@ urlpatterns = [
     path("login", ChatGPTLoginView.as_view()),
     path("car", GptCarView.as_view()),
     path("car-enum", GptCarEnum.as_view()),
-
 ]

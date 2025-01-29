@@ -33,4 +33,4 @@ class GptCarView(generics.ListCreateAPIView):
         serializer = DeleteChatgptCarSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         ChatgptCar.objects.filter(id__in=serializer.data["ids"]).delete()
-        return Response({"message": "删除成功"})
+        return Response({"message": "Deleted successfully"})

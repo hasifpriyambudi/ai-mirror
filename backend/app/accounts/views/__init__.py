@@ -74,7 +74,7 @@ class BatchModelLimit(APIView):
         serializer = BatchModelLimitSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         User.objects.filter(id__in=serializer.data["user_id_list"]).update(model_limit=serializer.data["model_limit"])
-        return Response({"message": "更新成功"})
+        return Response({"message": "Successful update"})
 
 
 class UserRelateGPTCarView(APIView):
@@ -112,7 +112,7 @@ class UserAccountView(generics.ListCreateAPIView):
         serializer = AddUserAccountSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         if serializer.data["username"] == ADMIN_USERNAME:
-            raise ValidationError({"message": "管理员账号不能操作"})
+            raise ValidationError({"message": "The administrator account cannot be operated"})
 
         user, created = User.objects.get_or_create(username=serializer.data["username"], defaults=serializer.data)
 
@@ -141,9 +141,9 @@ class UserAccountView(generics.ListCreateAPIView):
     def delete(self, request, *args, **kwargs):
         username = request.data.get("username")
         if username == ADMIN_USERNAME:
-            raise ValidationError({"message": "不能删除管理员账号"})
+            raise ValidationError({"message": "Cannot delete administrator account"})
         User.objects.filter(username=username).delete()
-        return Response({"message": "删除成功"})
+        return Response({"message": "Deleted successfully"})
 
 
 class VisitLogView(generics.ListAPIView):

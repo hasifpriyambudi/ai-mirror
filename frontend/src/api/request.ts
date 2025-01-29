@@ -30,12 +30,12 @@ const RequestApi = async (url: string, method = 'GET', body: any = undefined) =>
   }
 
   if (response.status === 500) {
-    MessagePlugin.error('系统异常');
+    MessagePlugin.error('system anomaly');
     return new Response();
   }
 
   if (response.status === 502) {
-    MessagePlugin.error('服务未正常启动');
+    MessagePlugin.error('Service not starting properly');
     return new Response();
   }
 

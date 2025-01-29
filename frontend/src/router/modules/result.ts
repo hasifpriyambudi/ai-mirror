@@ -8,7 +8,7 @@ export default [
     redirect: '/result/success',
     meta: {
       title: {
-        zh_CN: '结果页',
+        zh_CN: 'Result',
         en_US: 'Result',
       },
       icon: 'check-circle',
@@ -20,7 +20,7 @@ export default [
         component: () => import('@/pages/result/success/index.vue'),
         meta: {
           title: {
-            zh_CN: '成功页',
+            zh_CN: 'Success',
             en_US: 'Success',
           },
         },
@@ -31,7 +31,7 @@ export default [
         component: () => import('@/pages/result/fail/index.vue'),
         meta: {
           title: {
-            zh_CN: '失败页',
+            zh_CN: 'Fail',
             en_US: 'Fail',
           },
         },
@@ -42,7 +42,7 @@ export default [
         component: () => import('@/pages/result/network-error/index.vue'),
         meta: {
           title: {
-            zh_CN: '网络异常',
+            zh_CN: 'Network Error',
             en_US: 'Network Error',
           },
         },
@@ -51,31 +51,31 @@ export default [
         path: '403',
         name: 'Result403',
         component: () => import('@/pages/result/403/index.vue'),
-        meta: { title: { zh_CN: '无权限', en_US: 'Forbidden' } },
+        meta: { title: { zh_CN: 'Forbidden', en_US: 'Forbidden' } },
       },
       {
         path: '404',
         name: 'Result404',
         component: () => import('@/pages/result/404/index.vue'),
-        meta: { title: { zh_CN: '访问页面不存在页', en_US: 'Not Found' } },
+        meta: { title: { zh_CN: 'Not Found', en_US: 'Not Found' } },
       },
       {
         path: '500',
         name: 'Result500',
         component: () => import('@/pages/result/500/index.vue'),
-        meta: { title: { zh_CN: '服务器出错页', en_US: 'Server Error' } },
+        meta: { title: { zh_CN: 'Server Error', en_US: 'Server Error' } },
       },
       {
         path: 'browser-incompatible',
         name: 'ResultBrowserIncompatible',
         component: () => import('@/pages/result/browser-incompatible/index.vue'),
-        meta: { title: { zh_CN: '浏览器不兼容页', en_US: 'BrowserIncompatible' } },
+        meta: { title: { zh_CN: 'BrowserIncompatible', en_US: 'BrowserIncompatible' } },
       },
       {
         path: 'maintenance',
         name: 'ResultMaintenance',
         component: () => import('@/pages/result/maintenance/index.vue'),
-        meta: { title: { zh_CN: '系统维护页', en_US: 'Maintenance' } },
+        meta: { title: { zh_CN: 'Maintenance', en_US: 'Maintenance' } },
       },
     ],
   },

@@ -13,11 +13,11 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='chatgptaccount',
             name='auth_status',
-            field=models.BooleanField(default=True, verbose_name='授权状态'),
+            field=models.BooleanField(default=True, verbose_name='authorization status'),
         ),
         migrations.AlterField(
             model_name='chatgptaccount',
             name='remark',
-            field=models.TextField(blank=True, null=True, verbose_name='备注'),
+            field=models.TextField(blank=True, null=True, verbose_name='Notte'),
         ),
     ]
